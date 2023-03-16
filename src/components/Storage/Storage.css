@@ -1,8 +1,148 @@
 .Storage {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   margin: auto;
   width: 90%;
   max-width: 1000px;
+  gap: 20px;
+}
+
+.Storage-header,
+.Storage-stats {
+  background-color: var(--darkBlue);
+  padding: 40px 30px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.Storage-header {
+  border-top-right-radius: 100px;
+}
+
+.icons {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-container {
+  background-color: var(--veryDarkBlue);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.info {
+  text-align: center;
+  font-weight: lighter;
+}
+
+progress {
+  opacity: 0.6;
+}
+
+.progress-container {
+  margin-top: 20px;
+  background: var(--veryDarkBlue);
+  height: 20px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 2px;
+}
+
+.progress-bar {
+  border-radius: 15px;
+  height: 100%;
+  max-width: 100%;
+  background: linear-gradient(to left, hsl(335, 100%, 65%), hsl(6, 100%, 80%));
+  position: relative;
+}
+
+.progress-bar::before {
+  content: "";
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background-color: var(--paleBlue);
+}
+
+.limits {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bubble {
+  height: 80px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 180px;
+  margin: 20px auto -80px auto;
+  gap: 10px;
+  color: var(--veryDarkBlue);
+}
+
+.bubble h2 {
+  font-size: 37px;
+}
+
+.bubble p {
+  color: var(--ms-grid-row-span);
+  font-size: 15px;
+}
+
+@media (min-width: 750px) {
+  .Storage {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .Storage-header,
+  .Storage-stats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .Storage-header {
+    flex: 1;
+    height: 250px;
+    padding: 0px 40px;
+  }
+  .Storage-stats {
+    flex: 2;
+    height: 200px;
+    position: relative;
+  }
+
+  .bubble {
+    position: absolute;
+    right: 30px;
+    top: -70px;
+  }
+  .Storage-stats::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+    right: 30px;
+    top: 20px;
+    border-right: 30px solid white;
+    border-bottom: 50px solid transparent;
+  }
 }

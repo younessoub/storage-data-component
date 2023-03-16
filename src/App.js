@@ -4,7 +4,7 @@ import Storage from "./components/Storage";
 function App() {
   return (
     <div className="App">
-      <Storage />
+      <Storage used={815} max={1000} />
     </div>
   );
 }

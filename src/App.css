@@ -6,6 +6,7 @@
   --ms-grid-row-span: hsl(229, 7%, 55%);
   --darkBlue: hsl(228, 56%, 26%);
   --veryDarkBlue: hsl(229, 57%, 11%);
+  --br-point: 750px;
 }
 
 *,
@@ -32,7 +33,7 @@ body {
   align-items: center;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 750px) {
   .App {
     background-image: url("./images/bg-desktop.png");
     background-size: contain;
